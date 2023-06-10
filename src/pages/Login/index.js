@@ -3,21 +3,24 @@ import './index.less'
 import { Button, Checkbox, Form, Input, Card } from 'antd'
 import logo from '@/assets/logo.png'
 export default class Login extends Component {
-  // const onFinish = values => {
-  //   console.log('Success:', values)
-  // }
-  // const onFinishFailed = errorInfo => {
-  //   console.log('Failed:', errorInfo)
-  // }
+  /*******
+   * @description: 表单登录-功能
+   * @param {*} value 表单组件内接收的值
+   * @return {*}
+   */
+  login = value => {
+    console.log('value', value)
+  }
   render() {
     return (
       <div className="login">
         <Card className="login-container">
           <img className="login-logo" src={logo} alt="" />
           {/* 表单 */}
-          <Form size="large" validateTrigger={['onBlur', 'onChange']}>
+          <Form name="basic" onFinish={this.login} size="large">
             <Form.Item
               name="mobile"
+              validateTrigger={['onBlur', 'onChange']}
               rules={[
                 {
                   required: true,
@@ -49,7 +52,16 @@ export default class Login extends Component {
               <input placeholder="请输入验证码" />
             </Form.Item>
 
-            <Form.Item valueRropName="checked">
+            <Form.Item
+              name="agreer"
+              valuePropName="checked"
+              rules={[
+                {
+                  required: true,
+                  message: '请阅读协议',
+                },
+              ]}
+            >
               <Checkbox>我已阅读并同意 [隐私协议] 和 [用户协议]</Checkbox>
             </Form.Item>
 
