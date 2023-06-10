@@ -2,22 +2,24 @@ import React, { Component } from 'react'
 import './index.less'
 import { Button, Checkbox, Form, Input, Card } from 'antd'
 import logo from '@/assets/logo.png'
-export default class Login extends Component {
-  /*******
-   * @description: 表单登录-功能
-   * @param {*} value 表单组件内接收的值
-   * @return {*}
-   */
-  login = value => {
-    console.log('value', value)
-  }
+import request from '@/utils/request'
+export default class onFinish extends Component {
   render() {
     return (
       <div className="login">
         <Card className="login-container">
           <img className="login-logo" src={logo} alt="" />
           {/* 表单 */}
-          <Form name="basic" onFinish={this.login} size="large">
+          <Form
+            name="basic"
+            onFinish={this.onFinish}
+            size="large"
+            initialValues={{
+              mobile: '13911111111',
+              code: '246810',
+              agree: true,
+            }}
+          >
             <Form.Item
               name="mobile"
               validateTrigger={['onBlur', 'onChange']}
@@ -53,7 +55,7 @@ export default class Login extends Component {
             </Form.Item>
 
             <Form.Item
-              name="agreer"
+              name="agree"
               valuePropName="checked"
               rules={[
                 {
@@ -77,5 +79,23 @@ export default class Login extends Component {
         </Card>
       </div>
     )
+  }
+  /*******
+   * @description: 表单登录-功能
+   * @param {*} value 表单组件内接收的值
+   * @return {*}
+   */
+  onFinish = async ({ mobile, code }) => {
+    console.log('我要发送数据,进行登录了')
+
+    const res = await request({
+      method: 'post',
+      url: '/authorizations',
+      data: {
+        mobile,
+        code,
+      },
+    })
+    console.log('res', res)
   }
 }
