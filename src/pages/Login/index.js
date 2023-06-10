@@ -7,7 +7,7 @@ import { login as userLogin } from '@/api/user'
 import { message } from 'antd'
 import { Navigate } from 'react-router-dom'
 export default class Login extends Component {
-  state = { isPass: false }
+  state = { isPass: false, loading: false }
   render() {
     return (
       <div className="login">
@@ -78,7 +78,12 @@ export default class Login extends Component {
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit" block>
+              <Button
+                type="primary"
+                htmlType="submit"
+                block
+                loading={this.state.loading}
+              >
                 登录
               </Button>
             </Form.Item>
@@ -94,22 +99,26 @@ export default class Login extends Component {
    */
   onFinish = async ({ mobile, code }) => {
     try {
+      this.setState({ loading: true })
       const res = await userLogin(mobile, code)
-
       // 登录成功
-      // 1.保存token
-      localStorage.setItem('token', res.data.token)
-      // 2.跳转到来源页面 或 首页
 
-      // this.props.history.push('/')
-      // this.navigate('/', { replace: true })
-      this.setState({ isPass: true })
-      console.log(res)
       // 3.提示消息
-      message.success('登录成功!')
+      message.success('登录成功!', 1, () => {
+        // 1.保存token
+        localStorage.setItem('token', res.data.token)
+        // 2.跳转到来源页面 或 首页
+
+        // this.props.history.push('/')
+        // this.navigate('/', { replace: true })
+        this.setState({ isPass: true })
+        console.log(res)
+      })
     } catch (error) {
-      message.error(error.response?.data.message || '登录失败,请稍后再试!')
+      message.warning(error.response?.data.message || '登录失败,请稍后再试!', 1)
       console.log(error)
+    } finally {
+      this.setState({ loading: false })
     }
   }
 }
