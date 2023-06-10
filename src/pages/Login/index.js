@@ -15,18 +15,37 @@ export default class Login extends Component {
         <Card className="login-container">
           <img className="login-logo" src={logo} alt="" />
           {/* 表单 */}
-          <Form
-            size="large"
-            name="basic"
-            // onFinish={onFinish}
-            // onFinishFailed={onFinishFailed}
-            autoComplete="off"
-          >
-            <Form.Item>
+          <Form size="large" validateTrigger={['onBlur', 'onChange']}>
+            <Form.Item
+              name="mobile"
+              rules={[
+                {
+                  required: true,
+                  message: '手机号不能为空',
+                },
+                {
+                  pattern: /^1[3-9]\d{9}$/,
+                  message: '手机格式错误,请重试!',
+                  validateTrigger: 'onBlur',
+                },
+              ]}
+            >
               <Input placeholder="请输入你的手机号" />
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item
+              name="code"
+              rules={[
+                {
+                  required: true,
+                  message: '验证码不能为空',
+                },
+                {
+                  pattern: /^\d{6}$/,
+                  message: '验证码必须是6位数字!',
+                },
+              ]}
+            >
               <input placeholder="请输入验证码" />
             </Form.Item>
 
