@@ -10,8 +10,8 @@
  */
 import React, { Component } from 'react'
 
-export default class Login extends Component {
+export default class Home extends Component {
   render() {
-    return <div>首页布局</div>
+    return <div>首页布局组件</div>
   }
 }

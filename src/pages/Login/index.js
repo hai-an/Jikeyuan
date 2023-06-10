@@ -2,13 +2,20 @@ import React, { Component } from 'react'
 import './index.less'
 import { Button, Checkbox, Form, Input, Card } from 'antd'
 import logo from '@/assets/logo.png'
-import request from '@/utils/request'
-export default class onFinish extends Component {
+// 发请求api
+import { login as userLogin } from '@/api/user'
+import { message } from 'antd'
+import { Navigate } from 'react-router-dom'
+export default class Login extends Component {
+  state = { isPass: false }
   render() {
     return (
       <div className="login">
         <Card className="login-container">
           <img className="login-logo" src={logo} alt="" />
+
+          {this.isPass && <Navigate to="/" replace={true} />}
+
           {/* 表单 */}
           <Form
             name="basic"
@@ -86,16 +93,23 @@ export default class onFinish extends Component {
    * @return {*}
    */
   onFinish = async ({ mobile, code }) => {
-    console.log('我要发送数据,进行登录了')
+    try {
+      const res = await userLogin(mobile, code)
 
-    const res = await request({
-      method: 'post',
-      url: '/authorizations',
-      data: {
-        mobile,
-        code,
-      },
-    })
-    console.log('res', res)
+      // 登录成功
+      // 1.保存token
+      localStorage.setItem('token', res.data.token)
+      // 2.跳转到来源页面 或 首页
+
+      // this.props.history.push('/')
+      // this.navigate('/', { replace: true })
+      this.setState({ isPass: true })
+      console.log(res)
+      // 3.提示消息
+      message.success('登录成功!')
+    } catch (error) {
+      message.error(error.response?.data.message || '登录失败,请稍后再试!')
+      console.log(error)
+    }
   }
 }

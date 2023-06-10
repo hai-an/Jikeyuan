@@ -30,4 +30,13 @@ instance.interceptors.response.use(
   }
 )
 
+// 发送请求
+export const sendRequest = (url, method = 'GET', sendData = {}) => {
+  return instance({
+    method,
+    url,
+    [method === 'GET' ? 'params' : 'data']: sendData,
+  })
+}
+
 export default instance
