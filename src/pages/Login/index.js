@@ -57,8 +57,11 @@ export default class Login extends Component {
               valuePropName="checked"
               rules={[
                 {
-                  required: true,
-                  message: '请阅读协议',
+                  // 自定义校验规则
+                  validator: (rule, value) =>
+                    value
+                      ? Promise.resolve()
+                      : Promise.reject(new Error('请阅读协议并同意协议')),
                 },
               ]}
             >
