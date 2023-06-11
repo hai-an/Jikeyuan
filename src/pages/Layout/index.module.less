@@ -1,21 +1,41 @@
-.aa {
-  .bb {
-    color: rgb(220, 222, 222);
-  }
-  // 如果没有使用驼峰命名法,对于不合法的命名需要使用[]语法 如类名 .tab-bar => styles['tab-bar']
-  .userList {
-    color: red;
-  }
+.layout {
+  height: 100vh;
+  // .bb {
+  //   color: rgb(220, 222, 222);
+  // }
+  // // 如果没有使用驼峰命名法,对于不合法的命名需要使用[]语法 如类名 .tab-bar => styles['tab-bar']
+  // .userList {
+  //   color: red;
+  // }
 
   :global {
-    .iconfont {
-      color: red;
+    // .iconfont {
+    //   color: red;
+    // }
+    // .ant-pagination-item-active {
+    //   border-color: red;
+    //   a {
+    //     color: red;
+    //   }
+    // }
+    .ant-layout {
+      height: 100%;
     }
-    .ant-pagination-item-active {
-      border-color: red;
-      a {
-        color: red;
-      }
+    .logo {
+      float: left;
+      width: 120px;
+      height: 31px;
+      margin: 16px 24px 16px 0;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .ant-row-rtl .logo {
+      float: right;
+      margin: 16px 0 16px 24px;
+    }
+
+    .site-layout-background {
+      background: #fff;
     }
   }
 
