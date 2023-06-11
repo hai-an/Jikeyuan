@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
-import './index.less'
-import { Button, Checkbox, Form, Input, Card } from 'antd'
+import { Navigate } from 'react-router-dom'
+import { Button, Checkbox, Form, Input, Card, message } from 'antd'
+import styles from './index.module.less'
 import logo from '@/assets/logo.png'
 // 发请求api
 import { login as userLogin } from '@/api/user'
-import { message } from 'antd'
-import { Navigate } from 'react-router-dom'
+
+console.log(styles)
 export default class Login extends Component {
-  state = { isPass: false, loading: false }
+  state = {
+    isPass: false,
+    loading: false,
+    color: ['#add8e6', '#E7EE98', '#BF7AC4', 'rgba(128,32,96,0.6)'],
+  }
+  '为深色背景定义自定义颜色而不是默认的“彩虹”'
   render() {
     return (
-      <div className="login">
+      <div className={styles.login}>
         <Card className="login-container">
           <img className="login-logo" src={logo} alt="" />
 

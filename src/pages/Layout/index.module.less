@@ -1,0 +1,36 @@
+.aa {
+  .bb {
+    color: rgb(220, 222, 222);
+  }
+  // 如果没有使用驼峰命名法,对于不合法的命名需要使用[]语法 如类名 .tab-bar => styles['tab-bar']
+  .userList {
+    color: red;
+  }
+
+  :global {
+    .iconfont {
+      color: red;
+    }
+    .ant-pagination-item-active {
+      border-color: red;
+      a {
+        color: red;
+      }
+    }
+  }
+
+  // .iconfont {
+  //   color: red;
+  // }
+  // // 如果被 :global包裹的类名,代表全局类名,就不会被css-modules处理
+  // :global(.iconfont) {
+  //   color: red;
+  // }
+
+  // :global(.ant-pagination-item-active) {
+  //   border-color: red;
+  //   > a {
+  //     color: red;
+  //   }
+  // }
+}
