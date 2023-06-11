@@ -3,15 +3,12 @@ import {
   LaptopOutlined,
   NotificationOutlined,
   UserOutlined,
+  LogoutOutlined,
 } from '@ant-design/icons'
 import { Breadcrumb, Layout, Menu } from 'antd'
 import styles from './index.module.less'
 const { Header, Content, Sider } = Layout
 const { SubMenu } = Menu
-const items1 = ['1', '2', '3'].map(key => ({
-  key,
-  label: `nav ${key}`,
-}))
 const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
   (icon, index) => {
     const key = String(index + 1)
@@ -36,12 +33,12 @@ export default class LayoutComponent extends Component {
         <Layout>
           <Header className="header">
             <div className="logo" />
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={['2']}
-              items={items1}
-            />
+            <div className="profile">
+              <span>用户名</span>
+              <span>
+                <LogoutOutlined /> 退出
+              </span>
+            </div>
           </Header>
           <Layout>
             <Sider width={200} className="site-layout-background">
