@@ -2,7 +2,7 @@
  * @Author: hai_an 1207783846@qq.com
  * @Date: 2023-06-09 17:09:37
  * @LastEditors: hai_an 1207783846@qq.com
- * @LastEditTime: 2023-06-14 18:31:39
+ * @LastEditTime: 2023-06-14 20:48:18
  * @FilePath: \jikeyuan-pc\src\pages\Layout\index.js
  * @Description:
  *
@@ -12,17 +12,26 @@ import React, { Component } from 'react'
 import { DiffOutlined, EditOutlined, LogoutOutlined, HomeOutlined } from '@ant-design/icons'
 import { Layout, Menu } from 'antd'
 import styles from './index.module.less'
+import { Link, Outlet } from 'react-router-dom'
+
+// 解构出 layout页面结构
 const { Header, Content, Sider } = Layout
+
 // 分离layout的侧边栏
 const tag = ['数据概览', '内容管理', '发布文章']
+const routerPath = ['/home', '/home/article', '/home/publish']
 const siderList = [HomeOutlined, DiffOutlined, EditOutlined].map((icon, index) => {
     const key = String(index + 1)
     return {
         key,
         icon: React.createElement(icon),
-        label: tag[index],
+        // label: tag[index],
+        // 要退转的地址
+        label: <Link to={routerPath[index]}>{tag[index]}</Link>,
+        // children: React.createElement(<Link to={routerPath[index]} />),
     }
 })
+
 export default class LayoutComponent extends Component {
     render() {
         return (
@@ -54,7 +63,10 @@ export default class LayoutComponent extends Component {
                             />
                         </Sider>
                         <Layout style={{ padding: '24px' }}>
-                            <Content className="site-layout-background">我是王荣国</Content>
+                            <Content className="site-layout-background">
+                                {/* 显示页面 */}
+                                <Outlet />
+                            </Content>
                         </Layout>
                     </Layout>
                 </Layout>
