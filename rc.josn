@@ -1,0 +1,495 @@
+{
+  "html.format.wrapAttributes": "preserve",
+  "html.format.wrapLineLength": 100,
+  "workbench.editor.wrapTabs": true,
+  "editor.wordWrap": "on",
+  "diffEditor.wordWrap": "on",
+  "editor.wordWrapColumn": 100,
+  "problems.showCurrentInStatus": true,
+  "explorer.confirmDelete": false,
+  "workbench.settings.openDefaultKeybindings": true,
+  "bracketPairColorizer.forceUniqueOpeningColor": true,
+  "bracketPairColorizer.timeOut": 0,
+  "bracketPairColorizer.forceIterationColorCycle": true,
+  "bracketPairColorizer.colorMode": "Independent",
+  "bracketPairColorizer.highlightActiveScope": true,
+  "editor.bracketPairColorization.enabled": true,
+  "bracketPairColorizer.consecutivePairColors": [
+    [
+      "<",
+      "</"
+    ],
+    [
+      "<",
+      "/>"
+    ],
+    [
+      "Gold",
+      "Orchid",
+      "LightSkyBlue"
+    ],
+    "Red",
+  ],
+  "workbench.editorAssociations": {
+    "*.json": "default",
+    "*.pptx": "default",
+    "*.html": "default",
+    "*.vue": "default",
+    "*.js": "default",
+    "*.es3": "default"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "files.autoGuessEncoding": true,
+  "workbench.editor.autoLockGroups": {
+    "workbench.editorinputs.searchEditorInput": true,
+  },
+  "indent_size": 4,
+  "indent_char": " ",
+  "css": {
+    "indent_size": 2
+  },
+  "osumode.enableDefaultImgs": false,
+  "editor.fontFamily": "'JetBrains Mono','HarmonyOS_Sans_SC','Courier New', monospace",
+  "workbench.editor.limit.enabled": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "emmet.showSuggestionsAsSnippets": true,
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.fullReload": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.proxy": {
+    "enable": false,
+    "baseUri": "/",
+    "proxyUri": "http://10.2.150.119:5500"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.NoBrowser": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "search.useGlobalIgnoreFiles": true,
+  "zenMode.hideTabs": false,
+  "auto-close-tag.insertSpaceBeforeSelfClosingTag": true,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideActivityBar": false,
+  "editor.inlineSuggest.enabled": true,
+  "cssrem.autoRemovePrefixZero": false,
+  "cssrem.vw": true,
+  "editor.suggest.showStatusBar": true,
+  "git.allowForcePush": true,
+  "html.format.templating": true,
+  "files.trimTrailingWhitespace": true,
+  "typescript.format.insertSpaceAfterConstructor": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false,
+    "yaml": false,
+    "javascript": true,
+    "vue": true,
+    "python": true
+  },
+  "translateSpeaker.appId": "20220508001207050",
+  "translateSpeaker.password": "4BsMmHu4oMaxmboJtrsN",
+  "translateSpeaker.apiType": "baidu",
+  "comments.useRelativeTime": false,
+  "prettier.flattenTernaries": true,
+  "vsintellicode.features.apiExamplests": "enabled",
+  "update.mode": "none",
+  "vsintellicode.features.apiExamples": "enabled",
+  "vsintellicode.features.python.deepLearning": "enabled",
+  "vsicons.presets.jsOfficial": true,
+  "vsicons.presets.nestjs": true,
+  "search.showLineNumbers": true,
+  "tabnine.receiveBetaChannelUpdates": true,
+  "vscode-office.openOutline": true,
+  "editor.renderWhitespace": "all",
+  "workbench.colorTheme": "Dracula",
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "terminal.integrated.defaultProfile.windows": "bash (MSYS2)",
+  "editor.formatOnType": false,
+  "diffEditor.codeLens": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.suggest.preview": true,
+  "json.maxItemsComputed": 7000,
+  "javascript.autoClosingTags": false,
+  "javascript.format.insertSpaceAfterCommaDelimiter": false,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "js-codeformer.useSemicolons": false,
+  "editor.language.brackets": [],
+  "files.trimFinalNewlines": true,
+  "workbench.commandPalette.history": 66,
+  "workbench.commandPalette.preserveInput": true,
+  "vscodePluginDemo.showTip": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+  "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": false,
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+  "javascript.referencesCodeLens.enabled": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "javascript.preferences.quoteStyle": "single",
+  "sass.disableAutoIndent": true,
+  "vetur.useWorkspaceDependencies": true,
+  "explorer.confirmDragAndDrop": false,
+  "EnglishChineseDictionary.enableHover": true,
+  "html.format.endWithNewline": true,
+  "editor.tabSize": 2,
+  "workbench.iconTheme": "vscode-icons",
+  "explorer.compactFolders": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.enableSmartCommit": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  // "editor.defaultFormatter":"dbaeumer.vscode-eslint",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.fontSize": 18,
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "wxml": "xml",
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "settingsSync.ignoredExtensions": [
+    "rohinivsenthil.postcode"
+  ],
+  "editor.useTabStops": false,
+  "editor.insertSpaces": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": true,
+  "editor.foldingImportsByDefault": true,
+  // "eslint.rules.customizations":[
+  //   {
+  //     "eslint.enable":true,
+  //     "eslint.run":"onType",
+  //     "eslint.options":{
+  //       "extensions":[
+  //         ".js",
+  //         ".vue",
+  //         ".jsx",
+  //         ".tsx"
+  //       ],
+  //     },
+  //     "eslint.alwaysShowStatus":true,
+  //     "eslint.onIgnoredFiles":"warn",
+  //     "eslint.quiet":true,
+  //     "eslint.requirsConfigFile":false,
+  //     "editor.codeActionsOnSave":{
+  //       "source.fixAll.eslint":true,
+  //       "source.organizeImports":true
+  //     },
+  //   },
+  // ],
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "files.autoSave": "afterDelay",
+  "git.confirmSync": false,
+  "git.confirmForcePush": true,
+  "projectManager.git.baseFolders": [
+    "C:\\Users\\Administrator\\Desktop\\"
+  ],
+  "workbench.startupEditor": "none",
+  // "cssrem.hover":"disabled",
+  // "cssrem.remHover":false,
+  // "cssrem.currentLine":"disabled",
+  "prettier.vueIndentScriptAndStyle": true,
+  "github.gitAuthentication": false,
+  "python.formatting.provider": "none",
+  "workbench.editor.enablePreview": false,
+  "prettier.arrowParens": "avoid", // 函数参数只有一个时,不添加括号
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "*.css": "tailwindcss"
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "minapp-vscode.wxmlFormatter": "prettier",
+  "minapp-vscode.prettier": {
+    "useTabs": false,
+    "tabWidth": 2,
+    "printWidth": 80,
+    "singleQuote": false
+  },
+  "minapp-vscode.formatMaxLineCharacters": 80,
+  "workbench.productIconTheme": "flippidippi-product-icons",
+  "miniprogram.idePath": "C:\\Program Files (x86)\\Tencent\\微信web开发者工具",
+  "wxml.format.wrapLineLength": 80,
+  "editor.minimap.scale": 3,
+  "wxml.trace.server": "messages",
+  "wechat-miniapp.sync.delete": true,
+  "wechat-miniapp.ext.style": "scss",
+  // 头部注释
+  "fileheader.customMade": {
+    // Author字段是文件的创建者 可以在specialOptions中更改特殊属性
+    // 公司项目和个人项目可以配置不同的用户名与邮箱 搜索:gitconfig includeIf  比如:https://ayase.moe/2021/03/09/customized-git-config/
+    // 自动提取当前git config中的:用户名、邮箱
+    "Author": "git config user.name && git config user.email", // 同时获取用户名与邮箱
+    // "Author":"git config user.name", // 仅获取用户名
+    // "Author":"git config user.email", // 仅获取邮箱
+    // "Author":"OBKoro1", // 写死的固定值 不从git config中获取
+    "Date": "Do not edit", // 文件创建时间(不变)
+    // LastEditors、LastEditTime、FilePath将会自动更新 如果觉得时间更新的太频繁可以使用throttleTime(默认为1分钟)配置更改更新时间。
+    "LastEditors": "git config user.name && git config user.email", // 文件最后编辑者 与Author字段一致
+    // 由于编辑文件就会变更最后编辑时间，多人协作中合并的时候会导致merge
+    // 可以将时间颗粒度改为周、或者月，这样冲突就减少很多。搜索变更时间格式:dateFormat
+    "LastEditTime": "Do not edit", // 文件最后编辑时间
+    // 输出相对路径，类似:/文件夹名称/src/index.js
+    "FilePath": "Do not edit", // 文件在项目中的相对路径 自动更新
+    // 插件会自动将光标移动到Description选项中 方便输入 Description字段可以在specialOptions更改
+    "Description": "", // 介绍文件的作用、文件的入参、出参。
+    // custom_string_obkoro1~custom_string_obkoro100都可以输出自定义信息
+    // 可以设置多条自定义信息 设置个性签名、留下QQ、微信联系方式、输入空行等
+    "custom_string_obkoro1": "",
+    // 版权声明 保留文件所有权利 自动替换年份 获取git配置的用户名和邮箱
+    // 版权声明获取git配置, 与Author字段一致:${git_name} ${git_email} ${git_name_email}
+    "custom_string_obkoro1_copyright": "Copyright (c) ${now_year} by ${git_name_email}, All Rights Reserved. "
+    // "custom_string_obkoro1_copyright":"Copyright (c) ${now_year} by 写死的公司名/用户名, All Rights Reserved. "
+  },
+  // 函数注释
+  "fileheader.cursorMode": {
+    "description": "", // 函数注释生成之后，光标移动到这里
+    "param": "", // param 开启函数参数自动提取 需要将光标放在函数行或者函数上方的空白行
+    "return": "",
+  },
+  // 插件配置项
+  "fileheader.configObj": {
+    "autoAdd": false, // 检测文件没有头部注释，自动添加文件头部注释
+    "autoAddLine": 100, // 文件超过多少行数 不再自动添加头部注释
+    "autoAlready": true, // 只添加插件支持的语言以及用户通过`language`选项自定义的注释
+    "supportAutoLanguage": [], // 设置之后，在数组内的文件才支持自动添加
+    // 自动添加头部注释黑名单
+    "prohibitAutoAdd": [
+      "json"
+    ],
+    "prohibitItemAutoAdd": [
+      "项目的全称禁止项目自动添加头部注释, 使用快捷键自行添加"
+    ],
+    "folderBlacklist": [
+      "node_modules"
+    ], // 文件夹或文件名禁止自动添加头部注释
+    "wideSame": false, // 头部注释等宽设置
+    "wideNum": 13, // 头部注释字段长度 默认为13
+    "functionWideNum": 0, // 函数注释等宽设置 设为0 即为关闭
+    // 头部注释第几行插入
+    "headInsertLine": {
+      "php": 2 // php文件 插入到第二行
+    },
+    "beforeAnnotation": {}, // 头部注释之前插入内容
+    "afterAnnotation": {}, // 头部注释之后插入内容
+    "specialOptions": {}, // 特殊字段自定义 比如:Author、LastEditTime、LastEditors、FilePath、Description、Date等
+    "switch": {
+      "newlineAddAnnotation": true // 默认遇到换行符(\r\n \n \r)添加注释符号
+    },
+    "moveCursor": true, // 自动移动光标到Description所在行
+    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+    "atSymbol": [
+      "@",
+      "@"
+    ], // 更改所有文件的自定义注释中的@符号
+    "atSymbolObj": {}, //  更改单独语言/文件的@
+    "colon": [
+      ":",
+      ":"
+    ], // 更改所有文件的注释冒号
+    "colonObj": {}, //  更改单独语言/文件的冒号
+    "filePathColon": "路径分隔符替换", // 默认值： mac:/ window是:\
+    "showErrorMessage": false, // 是否显示插件错误通知 用于debugger
+    "writeLog": false, // 错误日志生成
+    "CheckFileChange": false, // 单个文件保存时进行diff检查
+    "createHeader": false, // 新建文件自动添加头部注释
+    "useWorker": false, // 是否使用工作区设置
+    "designAddHead": false, // 添加注释图案时添加头部注释
+    "headDesignName": "random", // 图案注释使用哪个图案
+    "headDesign": false, // 是否使用图案注释替换头部注释
+    // 自定义配置是否在函数内生成注释 不同文件类型和语言类型
+    "cursorModeInternalAll": {}, // 默认为false 在函数外生成函数注释
+    "openFunctionParamsCheck": true, // 开启关闭自动提取添加函数参数
+    "functionParamsShape": [
+      "{",
+      "}"
+    ], // 函数参数外形自定义
+    // "functionParamsShape":"no type" 函数参数不需要类型
+    "functionBlankSpaceAll": {}, // 函数注释空格缩进 默认为空对象 默认值为0 不缩进
+    "functionTypeSymbol": "*", // 参数没有类型时的默认值
+    "typeParamOrder": "type param", // 参数类型 和 参数的位置自定义
+    "NoMatchParams": "no show param", // 没匹配到函数参数，是否显示@param与@return这两行 默认不显示param
+    "functionParamAddStr": "", // 在 type param 后面增加字符串 可能是冒号，方便输入参数描述
+    // 自定义语言注释，自定义取消 head、end 部分
+    // 不设置自定义配置language无效 默认都有head、end
+    "customHasHeadEnd": {}, // "cancel head and function" | "cancel head" | "cancel function"
+    "throttleTime": 60000, // 对同一个文件 需要过1分钟再次修改文件并保存才会更新注释
+    // 自定义语言注释符号，覆盖插件的注释格式
+    "language": {
+      // js后缀文件
+      "js": {
+        "head": "/**",
+        "middle": " $ *",
+        "end": " */",
+        // 函数自定义注释符号：如果有此配置 会默认使用
+        "functionSymbol": {
+          "head": "/******* ", // 统一增加几个*号
+          "middle": " * @",
+          "end": " */"
+        },
+        "functionParams": "typescript" // 函数注释使用ts语言的解析逻辑
+      },
+      // 一次匹配多种文件后缀文件 不用重复设置
+      "h/hpp/cpp": {
+        "head": "/*** ", // 统一增加几个*号
+        "middle": " * @",
+        "end": " */"
+      },
+      // 针对有特殊要求的文件如：test.blade.php
+      "blade.php": {
+        "head": "<!--",
+        "middle": " * @",
+        "end": "-->",
+      }
+    },
+    // 默认注释  没有匹配到注释符号的时候使用。
+    "annotationStr": {
+      "head": "/*",
+      "middle": " * @",
+      "end": " */",
+      "use": false
+    },
+  },
+  "git.autoRepositoryDetection": false,
+  "git.mergeEditor": true,
+  "git.showPushSuccessNotification": true,
+  "github.gitProtocol": "ssh",
+  "git.alwaysShowStagedChangesResourceGroup": true,
+  "git.closeDiffOnOperation": true,
+  "interview.workspaceFolder": "c:\\Users\\Administrator\\Documents\\前端每日练习题",
+  "tailwindCSS.experimental.configFile": null,
+  "editor.quickSuggestionsDelay": 20,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "ts"
+  },
+  // "files.associations":{
+  //   "*.css":"tailwindcss"
+  // },
+  "codesandbox.currentWorkspace": "ac4aef52-deb5-49c9-ac71-0c93df809b1e",
+  "remote.SSH.remotePlatform": {
+    "sandbox.wym7rr.csb": "linux"
+  },
+  // "[tailwindcss]":{
+  //   "editor.defaultFormatter":"esbenp.prettier-vscode"
+  // },
+  "quokka.automaticRestart": true,
+  "quokka.codeClipAutoUpload": true,
+  "color-highlight.markerType": "dot-before",
+  "translateSpeaker.mode": "autoEnglish",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.enableBell": true,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "bash (MSYS2)": {
+      "path": "C:\\msys64\\usr\\bin\\bash.exe",
+      "args": [
+        "--login",
+        "-i"
+      ]
+    },
+    "zsh": {
+      "path": "C:\\msys64\\msys2_shell.cmd -msys2 -defterm -no-start -use-full-path -here -shell zsh",
+      "args": []
+    }
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "terminal.integrated.splitCwd": "workspaceRoot",
+  "prettier.useTabs": true,
+  "prettier.tabWidth": 2, // 缩进字节数
+  "prettier.resolveGlobalModules": true,
+  "prettier.printWidth": 120, // 超过最大值换行
+  "prettier.bracketSameLine": true,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.BracketSameLine": false, // 在jsx中把'>' 是否单独放一行
+  "prettier.proseWrap": "preserve", // 默认值。因为使用了一些折行敏感型的渲染器（如GitHub comment）而按照markdown文本样式进行折行
+  "eslint.alwaysShowStatus": true, // 总是显示eslint状态
+  // "prettier.configPath": "C:\\Users\\Administrator\\.prettierrc", // prettierrc文件目录
+  // 保存时自动启用 eslint --fix 自动修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "eslint.autoFixOnSave": true,
+  },
+  "eslint.validate": [
+    "typescript",
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+  /* prettier的配置 */
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.bracketSpacing": true, // 在对象，数组括号与文字之间加空格 "{ foo: bar }"
+  "prettier.endOfLine": "auto", // 结尾是 \n \r \n\r auto
+  "prettier.eslintIntegration": false, //不让
+  "prettier.ignorePath": "", // 不使用prettier格式化的文件填写在项目的.prettierignore文件中
+  "prettier.jsxSingleQuote": false, // 在jsx中使用单引号代替双引号
+  "prettier.parser": "babylon", // 格式化的解析器，默认是babylon
+  "prettier.requireConfig": false, // Require a 'prettierconfig' to format prettier
+  "prettier.stylelintIntegration": false, //不让prettier使用stylelint的代码格式进行校验
+  "prettier.trailingComma": "es5", // 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）
+  "prettier.tslintIntegration": false // 不让prettier使用tslint的代码格式进行校验
+  ,
+  "trailingComma": "none" // 函数最后不需要逗号
+  ,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "singleQuote": true,
+      "semi": false,
+    }
+  },
+  "vetur.format.defaultFormatter.html": "prettyhtml",
+  "vetur.format.defaultFormatter.js": "prettier",
+  "window.zoomLevel": -2,
+}

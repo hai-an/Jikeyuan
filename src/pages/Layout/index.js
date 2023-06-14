@@ -2,7 +2,7 @@
  * @Author: hai_an 1207783846@qq.com
  * @Date: 2023-06-09 17:09:37
  * @LastEditors: hai_an 1207783846@qq.com
- * @LastEditTime: 2023-06-14 17:27:15
+ * @LastEditTime: 2023-06-14 18:31:39
  * @FilePath: \jikeyuan-pc\src\pages\Layout\index.js
  * @Description:
  *
@@ -10,7 +10,7 @@
  */
 import React, { Component } from 'react'
 import { DiffOutlined, EditOutlined, LogoutOutlined, HomeOutlined } from '@ant-design/icons'
-import { Breadcrumb, Layout, Menu } from 'antd'
+import { Layout, Menu } from 'antd'
 import styles from './index.module.less'
 const { Header, Content, Sider } = Layout
 // 分离layout的侧边栏
@@ -18,7 +18,7 @@ const tag = ['数据概览', '内容管理', '发布文章']
 const siderList = [HomeOutlined, DiffOutlined, EditOutlined].map((icon, index) => {
     const key = String(index + 1)
     return {
-        key: `sub${key}`,
+        key,
         icon: React.createElement(icon),
         label: tag[index],
     }
@@ -40,11 +40,12 @@ export default class LayoutComponent extends Component {
                         </div>
                     </Header>
                     <Layout>
-                        <Sider width={200} className="site-layout-background">
+                        <Sider width={200}>
                             <Menu
+                                theme="dark"
                                 mode="inline"
                                 defaultSelectedKeys={['1']}
-                                defaultOpenKeys={['sub1']}
+                                defaultOpenKeys={['1']}
                                 style={{
                                     height: '100%',
                                     borderRight: 0,
@@ -52,27 +53,8 @@ export default class LayoutComponent extends Component {
                                 items={siderList}
                             />
                         </Sider>
-                        <Layout
-                            style={{
-                                padding: '0 24px 24px',
-                            }}>
-                            <Breadcrumb
-                                style={{
-                                    margin: '16px 0',
-                                }}>
-                                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                                <Breadcrumb.Item>List</Breadcrumb.Item>
-                                <Breadcrumb.Item>App</Breadcrumb.Item>
-                            </Breadcrumb>
-                            <Content
-                                className="site-layout-background"
-                                style={{
-                                    padding: 24,
-                                    margin: 0,
-                                    minHeight: 280,
-                                }}>
-                                Content{' '}
-                            </Content>
+                        <Layout style={{ padding: '24px' }}>
+                            <Content className="site-layout-background">我是王荣国</Content>
                         </Layout>
                     </Layout>
                 </Layout>

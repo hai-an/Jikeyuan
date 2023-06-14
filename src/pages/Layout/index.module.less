@@ -1,71 +1,70 @@
 .layout {
-  height: 100vh;
-  // .bb {
-  //   color: rgb(220, 222, 222);
-  // }
-  // // 如果没有使用驼峰命名法,对于不合法的命名需要使用[]语法 如类名 .tab-bar => styles['tab-bar']
-  // .userList {
-  //   color: red;
-  // }
+    height: 100vh;
+    // .bb {
+    //   color: rgb(220, 222, 222);
+    // }
+    // // 如果没有使用驼峰命名法,对于不合法的命名需要使用[]语法 如类名 .tab-bar => styles['tab-bar']
+    // .userList {
+    //   color: red;
+    // }
 
-  :global {
+    :global {
+        // .iconfont {
+        //   color: red;
+        // }
+        // .ant-pagination-item-active {
+        //   border-color: red;
+        //   a {
+        //     color: red;
+        //   }
+        // }
+        .ant-layout {
+            height: 100%;
+            &-header {
+                padding: 0;
+            }
+            .logo {
+                float: left;
+                width: 200px;
+                height: 60px;
+                // margin: 16px 24px 16px 0;
+                background-image: url('~@/assets/logo.png');
+                background-size: 200px 60px;
+                // background: rgba(255, 255, 255, 0.3);
+            }
+            .profile {
+                color: #fff;
+                font-weight: 700;
+                position: absolute;
+                right: 20px;
+                span + span {
+                    margin-left: 20px;
+                    cursor: pointer;
+                }
+            }
+            .ant-row-rtl .logo {
+                float: right;
+                margin: 16px 0 16px 24px;
+            }
+
+            .site-layout-background {
+                background: #fff;
+            }
+        }
+    }
+
     // .iconfont {
     //   color: red;
     // }
-    // .ant-pagination-item-active {
+    // // 如果被 :global包裹的类名,代表全局类名,就不会被css-modules处理
+    // :global(.iconfont) {
+    //   color: red;
+    // }
+
+    // :global(.ant-pagination-item-active) {
     //   border-color: red;
-    //   a {
+    //   > a {
     //     color: red;
     //   }
     // }
-    .ant-layout {
-      height: 100%;
-      &-header {
-        padding: 0;
-      }
-      .logo {
-        float: left;
-        width: 200px;
-        height: 60px;
-        // margin: 16px 24px 16px 0;
-        background-image: url('~@/assets/logo.png');
-        background-size: 200px 60px;
-        // background: rgba(255, 255, 255, 0.3);
-      }
-      .profile {
-        color: #fff;
-        font-weight: 700;
-        position: absolute;
-        right: 20px;
-
-        span + span {
-          margin-left: 20px;
-          cursor: pointer;
-        }
-      }
-      .ant-row-rtl .logo {
-        float: right;
-        margin: 16px 0 16px 24px;
-      }
-
-      .site-layout-background {
-        background: #fff;
-      }
-    }
-  }
-
-  // .iconfont {
-  //   color: red;
-  // }
-  // // 如果被 :global包裹的类名,代表全局类名,就不会被css-modules处理
-  // :global(.iconfont) {
-  //   color: red;
-  // }
-
-  // :global(.ant-pagination-item-active) {
-  //   border-color: red;
-  //   > a {
-  //     color: red;
-  //   }
-  // }
 }
