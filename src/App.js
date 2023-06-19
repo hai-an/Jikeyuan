@@ -9,28 +9,14 @@
  $ *Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
 
-
-import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom'
-import Home from './pages/Layout'
-import Login from './pages/Login'
-import NotFound from './pages/NotFound'
-
+import { Outlet } from 'react-router-dom'
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Link to="/"> 首页 </Link>
-        <Link to="/login"> 登录 </Link>
-        {/* 配置路由规则 */}
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          {/* 404页面 */}
-          <Route path="*" element={<NotFound />}></Route>
-        </Routes>
-      </div>
-    </Router>
-  )
+    return (
+        <div className="App">
+            {/* 显示路由页面 */}
+            <Outlet></Outlet>
+        </div>
+    )
 }
 
 export default App
