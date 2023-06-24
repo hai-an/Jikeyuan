@@ -2,7 +2,7 @@
  * @Author: hai_an 1207783846@qq.com
  * @Date: 2023-06-09 17:09:37
  * @LastEditors: hai_an 1207783846@qq.com
- * @LastEditTime: 2023-06-14 20:48:18
+ * @LastEditTime: 2023-06-24 21:18:33
  * @FilePath: \jikeyuan-pc\src\pages\Layout\index.js
  * @Description:
  *
@@ -10,12 +10,15 @@
  */
 import React, { Component } from 'react'
 import { DiffOutlined, EditOutlined, LogoutOutlined, HomeOutlined } from '@ant-design/icons'
-import { Layout, Menu } from 'antd'
+import { Layout, Menu, Popconfirm, message } from 'antd'
 import styles from './index.module.less'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { removeToken } from '@/utils/storage'
 
 // 解构出 layout页面结构
 const { Header, Content, Sider } = Layout
+
+// 使用 历史记录
 
 // 分离layout的侧边栏
 const tag = ['数据概览', '内容管理', '发布文章']
@@ -25,26 +28,21 @@ const siderList = [HomeOutlined, DiffOutlined, EditOutlined].map((icon, index) =
     return {
         key,
         icon: React.createElement(icon),
-        // label: tag[index],
-        // 要退转的地址
         label: <Link to={routerPath[index]}>{tag[index]}</Link>,
-        // children: React.createElement(<Link to={routerPath[index]} />),
     }
 })
 
-export default class LayoutComponent extends Component {
+class LayoutComponent extends Component {
     render() {
         return (
             <div className={styles.layout}>
                 <Layout>
                     <Header className="header">
-                        <div className="logo pro" />
-
+                        <div className="logo" />
                         <div className="profile">
                             <span>用户名</span>
                             <span>
-                                <LogoutOutlined />
-                                退出
+                                <ToLoginBtn />
                             </span>
                         </div>
                     </Header>
@@ -74,3 +72,31 @@ export default class LayoutComponent extends Component {
         )
     }
 }
+// TODO: 1.退出 <按钮组件> => 控制 跳转login页面
+function ToLoginBtn() {
+    const navigate = useNavigate()
+    const onConfirm = () => {
+        // console.log('确定退函数')
+        // 0.清除token
+        // 1.跳转到登录页
+        // 3.操作成功提示
+        // localStorage.removeItem('token')
+        removeToken()
+        navigate('/login')
+        message.success('您已成功退出!')
+    }
+    // navigate('/login')
+    return (
+        <Popconfirm
+            placement="topRight"
+            title="确定要退出系统吗?"
+            onConfirm={onConfirm}
+            okText="确定"
+            cancelText="取消">
+            <LogoutOutlined /> 退出
+        </Popconfirm>
+    )
+}
+export default LayoutComponent
+
+// export default LayoutComponent
