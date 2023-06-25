@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Navigate } from 'react-router-dom'
+import React, { useEffect, useState, useCallback } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Button, Checkbox, Form, Input, Card, message } from 'antd'
 import styles from './index.module.less'
 import logo from '@/assets/logo.png'
@@ -7,110 +7,134 @@ import logo from '@/assets/logo.png'
 import { login as userLogin } from '@/api/user'
 import { setToken } from '@/utils/storage'
 
-// console.log(styles)
-export default class Login extends Component {
-    state = {
-        isPass: false,
-        loading: false,
-    }
+const useLogin = from => {
+    const [isPass, setIsPass] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
 
-    render() {
-        return (
-            <div className={styles.login}>
-                <Card className="login-container">
-                    <img className="login-logo" src={logo} alt="" />
+    const navigateCallback = useCallback(navigate, [])
 
-                    {this.state.isPass && <Navigate to="/home" replace={true} />}
-
-                    {/* 表单 */}
-                    <Form
-                        name="basic"
-                        onFinish={this.onFinish}
-                        size="large"
-                        initialValues={{
-                            mobile: '13911111111',
-                            code: '246810',
-                            agree: true,
-                        }}>
-                        <Form.Item
-                            name="mobile"
-                            validateTrigger={['onBlur', 'onChange']}
-                            rules={[
-                                {
-                                    required: true,
-                                    message: '手机号不能为空',
-                                },
-                                {
-                                    pattern: /^1[3-9]\d{9}$/,
-                                    message: '手机格式错误,请重试!',
-                                    validateTrigger: 'onBlur',
-                                },
-                            ]}>
-                            <Input placeholder="请输入你的手机号" />
-                        </Form.Item>
-
-                        <Form.Item
-                            name="code"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: '验证码不能为空',
-                                },
-                                {
-                                    pattern: /^\d{6}$/,
-                                    message: '验证码必须是6位数字!',
-                                },
-                            ]}>
-                            <input placeholder="请输入验证码" />
-                        </Form.Item>
-
-                        <Form.Item
-                            name="agree"
-                            valuePropName="checked"
-                            rules={[
-                                {
-                                    // 自定义校验规则
-                                    validator: (rule, value) =>
-                                        value ? Promise.resolve() : Promise.reject(new Error('请阅读协议并同意协议')),
-                                },
-                            ]}>
-                            <Checkbox>我已阅读并同意 [隐私协议] 和 [用户协议]</Checkbox>
-                        </Form.Item>
-
-                        <Form.Item>
-                            <Button type="primary" htmlType="submit" block loading={this.state.loading}>
-                                登录
-                            </Button>
-                        </Form.Item>
-                    </Form>
-                </Card>
-            </div>
-        )
-    }
     /*******
      * @description: 表单登录-功能
      * @param {*} value 表单组件内接收的值
      * @return {*}
      */
-    onFinish = async ({ mobile, code }) => {
+    const onFinish = async ({ mobile, code }) => {
+        console.log(mobile, code, from)
         try {
-            this.setState({ loading: true })
+            setLoading(true)
             const res = await userLogin(mobile, code)
             // 登录成功
-
             // 3.提示消息
             message.success('登录成功!', 1, async () => {
                 // 1.保存token
-                // localStorage.setItem('token', res.data.token)
                 setToken(res.data.token)
-                // 2.跳转到来源页面 或 首页
-                this.setState({ isPass: true }, () => console.log(res, this.state))
+                // console.log(from) // 输出传递的props值
+                // 2.跟新状态
+                setIsPass(true)
+                // console.log(isPass, from)
+                setTimeout(() => console.log('object', isPass, from), 2500)
             })
         } catch (error) {
             message.warning(error.response?.data.message || '登录失败,请稍后再试!', 1)
             console.log(error)
         } finally {
-            this.setState({ loading: false })
+            setLoading(false)
         }
     }
+    // 3.跳转到来源页面
+    useEffect(() => {
+        console.log(isPass, from)
+        // isPass为true,且当前页面不为 login => 来源页面
+        if (isPass && from && from !== '/login') {
+            console.log('4')
+
+            navigateCallback(from, { replace: true })
+        }
+        // isPass为true,且差处位 /login => 跟新状态
+        else if (isPass & (from === '/login')) {
+            console.log('5')
+            navigateCallback('/home', { replace: true })
+        }
+    }, [isPass, from, navigate])
+    return { onFinish, loading }
 }
+
+const Login = props => {
+    const location = useLocation()
+    const from = location.state && location.state.from
+    console.log(location, 'icon')
+    console.log(from)
+    const { isPass, loading, onFinish } = useLogin(from)
+
+    return (
+        <div className={styles.login}>
+            <Card className="login-container">
+                <img className="login-logo" src={logo} alt="" />
+
+                {/* {isPass && navigate('/home')} */}
+
+                <Form
+                    name="basic"
+                    onFinish={values => onFinish(values)}
+                    size="large"
+                    initialValues={{
+                        mobile: '13911111111',
+                        code: '246810',
+                        agree: true,
+                    }}>
+                    <Form.Item
+                        name="mobile"
+                        validateTrigger={['onBlur', 'onChange']}
+                        rules={[
+                            {
+                                required: true,
+                                message: '手机号不能为空',
+                            },
+                            {
+                                pattern: /^1[3-9]\d{9}$/,
+                                message: '手机格式错误,请重试!',
+                                validateTrigger: 'onBlur',
+                            },
+                        ]}>
+                        <Input placeholder="请输入你的手机号" />
+                    </Form.Item>
+
+                    <Form.Item
+                        name="code"
+                        rules={[
+                            {
+                                required: true,
+                                message: '验证码不能为空',
+                            },
+                            {
+                                pattern: /^\d{6}$/,
+                                message: '验证码必须是6位数字!',
+                            },
+                        ]}>
+                        <input placeholder="请输入验证码" />
+                    </Form.Item>
+
+                    <Form.Item
+                        name="agree"
+                        valuePropName="checked"
+                        rules={[
+                            {
+                                validator: (rule, value) =>
+                                    value ? Promise.resolve() : Promise.reject(new Error('请阅读协议并同意协议')),
+                            },
+                        ]}>
+                        <Checkbox>我已阅读并同意 [隐私协议] 和 [用户协议]</Checkbox>
+                    </Form.Item>
+
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" block loading={loading}>
+                            登录
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </Card>
+        </div>
+    )
+}
+export default Login

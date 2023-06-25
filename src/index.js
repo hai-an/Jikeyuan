@@ -2,7 +2,7 @@
  * @Author: hai_an 1207783846@qq.com
  * @Date: 2023-06-09 16:39:41
  * @LastEditors: hai_an 1207783846@qq.com
- * @LastEditTime: 2023-06-25 14:32:59
+ * @LastEditTime: 2023-06-25 17:23:35
  * @FilePath: \jikeyuan-pc\src\index.js
  * @Description:
  *
@@ -34,8 +34,8 @@ root.render(
 
                 <Route path="home" element={<AuthRoute component={Layout} />}>
                     <Route exact path="/home" element={<AuthRoute component={Home} />} />
-                    <Route path="article" element={<AuthRoute component={ArticleList} />} />
-                    <Route path="publish" element={<AuthRoute component={ArticlePublish} />} />
+                    <Route path="article" element={<AuthRoute redirect={this} component={ArticleList} />} />
+                    <Route path="publish" element={<AuthRoute redirect={this} component={ArticlePublish} />} />
                 </Route>
 
                 <Route path="login" element={<Login />}></Route>
