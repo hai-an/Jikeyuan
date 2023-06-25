@@ -34,8 +34,8 @@ root.render(
 
                 <Route path="home" element={<AuthRoute component={Layout} />}>
                     <Route exact path="/home" element={<AuthRoute component={Home} />} />
-                    <Route path="article" element={<AuthRoute redirect={this} component={ArticleList} />} />
-                    <Route path="publish" element={<AuthRoute redirect={this} component={ArticlePublish} />} />
+                    <Route path="article" element={<AuthRoute component={ArticleList} />} />
+                    <Route path="publish" element={<AuthRoute component={ArticlePublish} />} />
                 </Route>
 
                 <Route path="login" element={<Login />}></Route>

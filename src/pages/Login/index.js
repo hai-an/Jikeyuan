@@ -12,7 +12,7 @@ const useLogin = from => {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
-    const navigateCallback = useCallback(navigate, [])
+    const navigateCallback = useCallback(navigate, [navigate])
 
     /*******
      * @description: 表单登录-功能
@@ -29,11 +29,8 @@ const useLogin = from => {
             message.success('登录成功!', 1, async () => {
                 // 1.保存token
                 setToken(res.data.token)
-                // console.log(from) // 输出传递的props值
                 // 2.跟新状态
                 setIsPass(true)
-                // console.log(isPass, from)
-                setTimeout(() => console.log('object', isPass, from), 2500)
             })
         } catch (error) {
             message.warning(error.response?.data.message || '登录失败,请稍后再试!', 1)
@@ -44,7 +41,6 @@ const useLogin = from => {
     }
     // 3.跳转到来源页面
     useEffect(() => {
-        console.log(isPass, from)
         // isPass为true,且当前页面不为 login => 来源页面
         if (isPass && from && from !== '/login') {
             console.log('4')
@@ -56,16 +52,14 @@ const useLogin = from => {
             console.log('5')
             navigateCallback('/home', { replace: true })
         }
-    }, [isPass, from, navigate])
+    }, [isPass, from, navigateCallback])
     return { onFinish, loading }
 }
 
 const Login = props => {
     const location = useLocation()
     const from = location.state && location.state.from
-    console.log(location, 'icon')
-    console.log(from)
-    const { isPass, loading, onFinish } = useLogin(from)
+    const { loading, onFinish } = useLogin(from)
 
     return (
         <div className={styles.login}>
