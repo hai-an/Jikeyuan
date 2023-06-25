@@ -2,7 +2,7 @@
  * @Author: hai_an 1207783846@qq.com
  * @Date: 2023-06-24 21:06:18
  * @LastEditors: hai_an 1207783846@qq.com
- * @LastEditTime: 2023-06-24 21:42:42
+ * @LastEditTime: 2023-06-25 12:22:00
  * @FilePath: \jikeyuan-pc\src\utils\storage.js
  * @Description:
  *
@@ -34,7 +34,7 @@ const removeToken = () => localStorage.removeItem(TOKEN_KEY)
  * @description: token是否存在
  * @return {*}
  */
-const hasToken = () => !!localStorage.getItem(TOKEN_KEY)
+const hasToken = () => !!getToken()
 
 // 全部导出
 export { getToken, setToken, removeToken, hasToken }

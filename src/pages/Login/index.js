@@ -5,14 +5,15 @@ import styles from './index.module.less'
 import logo from '@/assets/logo.png'
 // 发请求api
 import { login as userLogin } from '@/api/user'
-import { setToken} from '@/utils/storage'
+import { setToken } from '@/utils/storage'
 
-console.log(styles)
+// console.log(styles)
 export default class Login extends Component {
     state = {
         isPass: false,
         loading: false,
     }
+
     render() {
         return (
             <div className={styles.login}>
